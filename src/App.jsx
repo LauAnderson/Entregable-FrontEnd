@@ -9,14 +9,16 @@ import Listado from "./components/Listado";
 // PROPS: App deberá pasar por props lo necesario a sus componenetes internos.
 
 function App(props) {
-  const [elementos, setElementos] = useState();
+  const [elementosComprados, setElementosComprados] = useState(0);
 
-  const aumentarElementos = {};
+  const aumentarElementosComprados = () => {
+    setElementosComprados(elementosComprados + 1);
+  };
 
   return (
-    <div className="App">
-      <Cabecera />
-      <Listado />
+    <div className="body">
+      <Cabecera aumentarElementosComprados={aumentarElementosComprados} />
+      <Listado elementosComprados={elementosComprados} />
     </div>
   );
 }
