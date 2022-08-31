@@ -11,11 +11,13 @@ import { useState } from "react";
 
 export default function Item({ aumentarElementosComprados, productos }) {
   const [stock, setStock] = useState(productos.stock);
+  console.log(aumentarElementosComprados);
 
   const manejadorClick = () => {
     if (stock > 0) {
       setStock(stock - 1);
     }
+    aumentarElementosComprados();
   };
 
   return (
@@ -23,13 +25,12 @@ export default function Item({ aumentarElementosComprados, productos }) {
       <h3>{productos.producto.nombre}</h3>
       <p>{productos.producto.descripcion}</p>
       <h5>
-        En stock:{" "}
+        En stock:
         {stock ? stock : <span className=".producto h5 span"> agotado </span>}
       </h5>
       <button
         className=".producto button"
         onClick={manejadorClick}
-        aumentarElementosComprados={aumentarElementosComprados}
         disabled={!stock}
       >
         {stock ? "COMPRAR" : "SIN STOCK"}

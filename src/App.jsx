@@ -8,7 +8,7 @@ import Listado from "./components/Listado";
 // MÉTODOS: App debe tener un método para aumentar este número y que pueda ser ejecutado por su nieto Item.
 // PROPS: App deberá pasar por props lo necesario a sus componenetes internos.
 
-function App(props) {
+function App() {
   const [elementosComprados, setElementosComprados] = useState(0);
 
   const aumentarElementosComprados = () => {
@@ -17,8 +17,8 @@ function App(props) {
 
   return (
     <div className="body">
-      <Cabecera aumentarElementosComprados={aumentarElementosComprados} />
-      <Listado elementosComprados={elementosComprados} />
+      <Cabecera elementosComprados={elementosComprados} />
+      <Listado aumentarElementosComprados={aumentarElementosComprados} />
     </div>
   );
 }
