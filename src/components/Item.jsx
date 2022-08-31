@@ -14,24 +14,25 @@ export default function Item({ aumentarElementosComprados, productosTotales }) {
 
   const onClick = () => {
     if (stock > 0) {
-      setStock(stock - 1) && aumentarElementosComprados();
+      setStock(stock - 1);
     }
   };
-  console.log();
 
   return (
     <div className="producto">
       <h3>{productosTotales.producto.nombre}</h3>
       <p>{productosTotales.producto.descripcion}</p>
-      <h5 className=".producto h5">
-        En stock: {stock}
-        <span className=".producto h5 span"></span>
+      <h5>
+        En stock:
+        {stock ? stock : <span className=".producto h5 span"> agotado </span>}
       </h5>
-      {
-        <button className=".producto button" onClick={onClick}>
-          {stock ? "COMPRAR" : "SIN STOCK"}
-        </button>
-      }
+      <button
+        className=".producto button"
+        onClick={onClick}
+        aumentarElementosComprados={aumentarElementosComprados}
+      >
+        {stock ? "COMPRAR" : "SIN STOCK"}
+      </button>
     </div>
   );
 }

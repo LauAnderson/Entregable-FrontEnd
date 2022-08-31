@@ -15,7 +15,7 @@ export default function Listado({ aumentarElementosComprados }) {
   return (
     <div className="container">
       {productosTotales.map((producto) => (
-        <Item key={producto.id} productosTotales = {producto} aumentarElementosComprados = {aumentarElementosComprados}>{producto.producto / producto.stock}</Item>
+        <Item key={producto.id} productosTotales = {producto} aumentarElementosComprados = {aumentarElementosComprados}>{producto.producto}</Item>
       ))}
     </div>
   );
