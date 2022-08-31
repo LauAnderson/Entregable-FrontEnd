@@ -25,7 +25,7 @@ export default function Item({ aumentarElementosComprados, productos }) {
       <h3>{productos.producto.nombre}</h3>
       <p>{productos.producto.descripcion}</p>
       <h5>
-        En stock:
+        En stock:{" "}
         {stock ? stock : <span className=".producto h5 span"> agotado </span>}
       </h5>
       <button

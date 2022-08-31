@@ -13,8 +13,8 @@ export default function Cabecera({ elementosComprados }) {
     <header>
       <h1 className="header h1">Carrito de compras</h1>
       <p>
-        Cantidad de productos
-        <span className="header p span">{elementosComprados}</span>
+        Cantidad de productos{" "}
+        <span className="header p span"> {elementosComprados}</span>
       </p>
     </header>
   );
