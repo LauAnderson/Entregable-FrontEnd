@@ -1,5 +1,5 @@
 import React from "react";
-import productosTotales from "./data.json";
+import productos from "./data.json";
 import Item from "./Item";
 
 // Debemos importar el listado de objetos del archivo JSON para usarlos como array a la hora de crear cada Item.
@@ -10,12 +10,16 @@ import Item from "./Item";
 // PROPS: Listado recibe el método para aumentar el estado de App y se lo pasa a cada uno de sus hijos.
 
 export default function Listado({ aumentarElementosComprados }) {
-
-
   return (
     <div className="container">
-      {productosTotales.map((producto) => (
-        <Item key={producto.id} productosTotales = {producto} aumentarElementosComprados = {aumentarElementosComprados}>{producto.producto}</Item>
+      {productos.map((producto) => (
+        <Item
+          key={producto.id}
+          productos={producto}
+          aumentarElementosComprados={aumentarElementosComprados}
+        >
+          {producto.producto}
+        </Item>
       ))}
     </div>
   );
