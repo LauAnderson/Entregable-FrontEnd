@@ -11,7 +11,6 @@ import { useState } from "react";
 
 export default function Item({ aumentarElementosComprados, productos }) {
   const [stock, setStock] = useState(productos.stock);
-  console.log(aumentarElementosComprados);
 
   const manejadorClick = () => {
     if (stock > 0) {
